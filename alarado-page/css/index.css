@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+:root {
+  --background: #f2f9fe;
+  --text1: #223344;
+  --nav-link: rgba(34, 51, 68, 0.75);
+  --blue: #2a4dd0;
+  --white: #ffffff;
+  --black: #111729;
+  --dark-gray: #223344;
+  --light-blue: #f2f9fe;
+  --gray: #909193;
+  color-scheme: light dark;
+}
+.darkmode {
+  --background: #111729;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--light-blue);
+  font-family: "Poppins";
+  color-scheme: light;
+}
+.nav-link {
+  padding: 0.35em 0 0;
+  font-weight: 600;
+  opacity: 0.75;
+}
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+  opacity: 1;
+}
+.activeLink {
+  font-weight: 600;
+  opacity: 1;
+}
+.button {
+  width: 66px;
+  height: 32px;
+  position: relative;
+  border-radius: 100px;
+}
+.btn-switch {
+  display: block;
+  background-color: var(--white);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  z-index: 0;
+  top: 3px;
+  right: auto;
+  left: 4px;
+  transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+.checkbox:checked ~ .btn-switch {
+  left: 37px;
+}
+img[alt="Dark Mode"] {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(46%) saturate(566%)
+    hue-rotate(168deg) brightness(95%) contrast(87%);
+  z-index: 1;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+img[alt="Light Mode"] {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+    hue-rotate(17deg) brightness(101%) contrast(103%);
+  position: absolute;
+  top: 4.5px;
+  left: 38px;
+  z-index: 1;
+}
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 0;
+}
+.checkbox:checked ~ img[alt="Light Mode"] {
+  /* dark-grey */
+  filter: brightness(0) saturate(100%) invert(14%) sepia(46%) saturate(566%)
+    hue-rotate(168deg) brightness(95%) contrast(87%);
+}
+.checkbox:checked ~ img[alt="Dark Mode"] {
+  /* white */
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+    hue-rotate(17deg) brightness(101%) contrast(103%);
+}
+p {
+  font-size: 0.875rem;
+  /* color: var(--dark-gray); */
+  font-weight: 600;
+}
+h1 {
+  font-size: 3.75rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+h2 {
+  font-size: 1.125rem;
+  opacity: 0.65;
+  line-height: 1.45;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.65em 2em;
+  border-radius: 0.75rem;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+}
+.action a {
+  color: var(--blue);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+.info {
+  list-style-type: none;
+  padding: 0;
+  /* color: var(--dark-gray); */
+  opacity: 0.75;
+  font-weight: 500;
+}
+.info li::before {
+  content: url(../assets/Done_ring_round_fill.svg);
+  position: relative;
+  top: 5px;
+  margin-right: 0.75rem;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(69%) saturate(362%)
+    hue-rotate(75deg) brightness(90%) contrast(85%);
+}
+footer {
+  font-weight: 500;
+}
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--black);
+  }
+  .nav-link,
+  h2,
+  .info {
+    color: var(--gray);
+  }
+  .nav-link:hover,
+  .nav-link:active,
+  .nav-link:focus,
+  p,
+  h1 {
+    color: var(--white);
+  }
+  footer,
+  .activeLink {
+    color: var(--white);
+  }
+}
+@media screen and (prefers-color-scheme: light) {
+  body {
+    background-color: var(--light-blue);
+  }
+  .nav-link,
+  h2,
+  .info {
+    color: var(--dark-gray);
+    opacity: 0.75;
+  }
+  .nav-link:hover,
+  .nav-link:active,
+  .nav-link:focus,
+  p,
+  h1 {
+    color: var(--dark-gray);
+    opacity: 1;
+  }
+  .activeLink {
+    font-weight: 600;
+    color: var(--dark-gray);
+    opacity: 1;
+  }
+  footer {
+    color: var(--dark-gray);
+  }
+}

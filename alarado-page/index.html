@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alarado Home Page</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body class="container-fluid">
+    <header class="container">
+      <nav class="navbar navbar-expand-md pt-sm-4 pt-md-4 pt-4 px-md-0">
+        <a
+          href="index.html"
+          class="navbar-brand align-items-center col-lg-4 col-md-3 ps-sm-3 ps-md-0 ps-3 m-0"
+        >
+          <picture>
+            <source
+              srcset="./assets/logo.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <img src="./assets/alarado-icon-homepage.svg" />
+          </picture>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> -->
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="offcanvas-body justify-content-between align-items-center"
+          >
+            <ul class="navbar-nav gap-4">
+              <li class="nav-item">
+                <a href="#" class="nav-link activeLink">About Us</a>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link">Product</a></li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Resource</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+              </li>
+            </ul>
+            <div class="mt-lg-2">
+              <form class="button r">
+                <input
+                  type="checkbox"
+                  name="mode"
+                  id="mode"
+                  class="checkbox"
+                  checked
+                  aria-label="toggle dark mode"
+                />
+                <img src="./assets/Moon_fill.svg" alt="Dark Mode" />
+                <span class="btn-switch"></span>
+                <img src="./assets/Sun_fill.svg" alt="Light Mode" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container mt-lg-5 pt-lg-4">
+      <div class="row gx-xl-5 gy-xl-0 gy-5 flex-xl-row flex-column-reverse">
+        <div class="col-xl-6 d-flex flex-column justify-content-center">
+          <p class="text-uppercase">😎 simple way to communicate</p>
+          <h1 class="mb-xl-4 mb-lg-2 pb-md-4">
+            Actions for Accessibility in Design
+          </h1>
+          <h2 class="mb-md-4 pb-lg-0 pb-md-1 col-xl-12 col-lg-6 col-md-9">
+            The fastest way to build and deploy websites with reusable
+            components.
+          </h2>
+          <div class="d-flex align-items-center gap-4 mb-md-4 pb-md-2 action">
+            <button
+              type="button"
+              class="btn btn-primary text-uppercase me-md-2"
+            >
+              Get Started
+            </button>
+            <a href="#">Get live demo</a>
+          </div>
+          <ul class="info d-flex gap-xl-5 gap-4">
+            <li>No credit card required</li>
+            <li>No software to install</li>
+          </ul>
+        </div>
+        <div class="col-xl-6 col-lg-8 align-self-center">
+          <img
+            src="./assets/hero-image-simple-homepage.png"
+            alt="Hero Page"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Created by
+      <a href="https://github.com/ShrutiShinde418">ShrutiShinde418</a
+      >&nbsp;-&nbsp; devChallenges.io
+    </footer>
+  </body>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/index.js"></script>
+</html>
