@@ -3,6 +3,7 @@
   --background: #f2f9fe;
   --text1: #223344;
   --nav-link: rgba(34, 51, 68, 0.75);
+  --background-offcanvas: #ffffff;
   --blue: #2a4dd0;
   --white: #ffffff;
   --black: #111729;
@@ -11,8 +12,11 @@
   --gray: #909193;
   color-scheme: light dark;
 }
-.darkmode {
+.dark {
   --background: #111729;
+  --text1: #ffffff;
+  --nav-link: var(--gray);
+  --background-offcanvas: var(--black);
 }
 *,
 *::before,
@@ -20,21 +24,46 @@
   box-sizing: border-box;
 }
 body {
-  background-color: var(--light-blue);
+  background-color: var(--background);
   font-family: "Poppins";
   color-scheme: light;
 }
+.offcanvas {
+  background-color: var(--background-offcanvas);
+}
+.dark-mode {
+  display: none;
+}
+img[alt^="Hamburger Menu"] {
+  width: 40px;
+  height: 40px;
+}
+.offcanvas button {
+  border: none;
+  background: none;
+  padding-right: 1.25rem;
+}
+.offcanvas-header button img {
+  width: 20px;
+  height: 20px;
+}
+.navbar-nav {
+  font-size: 2.75rem;
+}
 .nav-link {
-  padding: 0.35em 0 0;
+  padding: 0.15em 0;
+  color: var(--nav-link);
   font-weight: 600;
   opacity: 0.75;
 }
 .nav-link:hover,
 .nav-link:active,
 .nav-link:focus {
+  color: var(--text1);
   opacity: 1;
 }
 .activeLink {
+  color: var(--text1);
   font-weight: 600;
   opacity: 1;
 }
@@ -43,6 +72,7 @@ body {
   height: 32px;
   position: relative;
   border-radius: 100px;
+  background-color: var(--dark-gray);
 }
 .btn-switch {
   display: block;
@@ -96,24 +126,26 @@ img[alt="Light Mode"] {
 }
 p {
   font-size: 0.875rem;
-  /* color: var(--dark-gray); */
+  color: var(--text1);
   font-weight: 600;
 }
 h1 {
-  font-size: 3.75rem;
+  font-size: 2.8rem;
   font-weight: 700;
   line-height: 1.55;
+  color: var(--text1);
 }
 h2 {
-  font-size: 1.125rem;
+  font-size: 1rem;
   opacity: 0.65;
   line-height: 1.45;
+  color: var(--nav-link);
 }
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 500;
   padding: 0.65em 2em;
   border-radius: 0.75rem;
@@ -129,7 +161,7 @@ h2 {
 .info {
   list-style-type: none;
   padding: 0;
-  /* color: var(--dark-gray); */
+  color: var(--nav-link);
   opacity: 0.75;
   font-weight: 500;
 }
@@ -143,52 +175,24 @@ h2 {
 }
 footer {
   font-weight: 500;
+  color: var(--text1);
 }
-@media screen and (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--black);
+@media (min-width: 992px) {
+  .navbar-nav {
+    font-size: 1rem;
   }
-  .nav-link,
-  h2,
-  .info {
-    color: var(--gray);
-  }
-  .nav-link:hover,
-  .nav-link:active,
-  .nav-link:focus,
-  p,
-  h1 {
-    color: var(--white);
-  }
-  footer,
-  .activeLink {
-    color: var(--white);
+  .nav-link {
+    padding: 0.75em 0 0;
   }
 }
-@media screen and (prefers-color-scheme: light) {
-  body {
-    background-color: var(--light-blue);
-  }
-  .nav-link,
-  h2,
-  .info {
-    color: var(--dark-gray);
-    opacity: 0.75;
-  }
-  .nav-link:hover,
-  .nav-link:active,
-  .nav-link:focus,
-  p,
+@media (min-width: 576px) {
   h1 {
-    color: var(--dark-gray);
-    opacity: 1;
+    font-size: 3.75rem;
   }
-  .activeLink {
-    font-weight: 600;
-    color: var(--dark-gray);
-    opacity: 1;
+  h2 {
+    font-size: 1.125rem;
   }
-  footer {
-    color: var(--dark-gray);
+  .btn-primary {
+    font-size: 1rem;
   }
 }
