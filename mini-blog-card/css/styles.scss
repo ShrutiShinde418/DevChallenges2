@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800;900&display=swap");
+$dark-purple: #883ae1;
+$light-purple: #e6d6fc;
+$white: #ffffff;
+$gray: #6c727f;
+$background: #fafaf9;
+$dark-gray: #20293a;
+$rule-color: #e5eaf0;
+$sora: "Sora";
+$border-radius1: 1rem;
+$img-border-radius: 0.75rem;
+$card-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.05);
+$card-padding: 1.05em;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin textStyle($color, $margin, $font-size, $font-weight) {
+  color: $color;
+  margin: $margin;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: $sora;
+  background-color: $background;
+}
+.card {
+  @extend %flex-column;
+  background-color: $white;
+  border-radius: $border-radius1;
+  box-shadow: $card-shadow;
+  max-width: 370px;
+  &__content {
+    padding: $card-padding;
+    @extend %flex-column;
+  }
+  &__footer {
+    padding: $card-padding;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $img-border-radius;
+    margin-bottom: $card-padding;
+  }
+  p {
+    @include textStyle($dark-purple, 0 0 1.65em 0, 0.625rem, 700);
+    padding: 0.5em 1.75em;
+    background-color: $light-purple;
+    border-radius: $border-radius1;
+    align-self: self-start;
+  }
+  h1 {
+    @include textStyle($dark-gray, 0 0 0.45em 0, 1.125rem, 600);
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  h2 {
+    @include textStyle($gray, 0 0 0.35em 0, 0.875rem, 300);
+    line-height: 1.5;
+  }
+  hr {
+    border-top: 0.025em solid $rule-color;
+    margin: 0;
+  }
+  h3 {
+    @include textStyle($gray, 0.25em 0, 0.75rem, 400);
+  }
+}
