@@ -67,7 +67,7 @@ Users should be able to:
 
 ## Author
 
-- GitHub - [ShrutiShinde418](https://github.com/ShrutiShinde418)
+- GitHub - [@ShrutiShinde418](https://github.com/ShrutiShinde418)
 - Frontend Mentor - [@ShrutiShinde418](https://www.frontendmentor.io/profile/ShrutiShinde418)
 
 ## Acknowledgments
