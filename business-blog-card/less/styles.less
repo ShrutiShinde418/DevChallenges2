@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@400;500;600&display=swap");
+@background: #f2f5f9;
+@white: #ffffff;
+@black: #111729;
+@gray: #677489;
+@avatar-border: rgba(103, 116, 137, 0.1);
+@poppins: "Poppins";
+@lato: "Lato";
+@title-size: 1.5rem;
+@border-radius: 0.75rem;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  place-items: center;
+  background-color: @background;
+  min-height: 95vh;
+  margin: 1rem;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.card {
+  background-color: @white;
+  max-width: 410px;
+  border-radius: @border-radius;
+  hr {
+    border-top: 1px solid @gray;
+    opacity: 0.15;
+    margin: 0;
+  }
+  .card__header {
+    position: relative;
+    img:first-of-type {
+      border-radius: 0.75rem 0.75rem 0 0;
+    }
+    img:last-of-type {
+      position: absolute;
+      top: 75%;
+      left: 0;
+      width: 100%;
+    }
+  }
+  .card__content {
+    padding: 0 2em;
+    h1 {
+      margin: 0;
+      font-family: @poppins;
+      font-weight: 500;
+      font-size: @title-size;
+      color: @black;
+      letter-spacing: -1px;
+      padding-right: 5%;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      font-family: @lato;
+      font-weight: 400;
+      font-size: 1rem;
+      color: @gray;
+      line-height: 1.5;
+      margin: 0 0 1.75em 0;
+    }
+  }
+  .card__footer {
+    display: flex;
+    padding: 1.5em 2em;
+    gap: 1.05em;
+    .card__avatar {
+      width: 3.5em;
+      img {
+        border-radius: 50%;
+        border: 6px solid @avatar-border;
+      }
+    }
+    .card__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.1em;
+      h3,
+      h4 {
+        margin: 0;
+      }
+      h3 {
+        font-family: @lato;
+        color: @black;
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      h4 {
+        font-family: @lato;
+        color: @gray;
+        font-size: 0.85rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
