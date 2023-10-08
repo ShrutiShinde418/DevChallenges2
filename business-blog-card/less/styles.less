@@ -7,7 +7,15 @@
 @poppins: "Poppins";
 @lato: "Lato";
 @title-size: 1.5rem;
+@body-size: 1rem;
+@small-text: 0.85rem;
 @border-radius: 0.75rem;
+.textStyle(@fontFamily, @fontWeight, @fontSize, @color) {
+  font-family: @fontFamily;
+  font-weight: @fontWeight;
+  font-size: @fontSize;
+  color: @color;
+}
 *,
 *::before,
 *::after {
@@ -18,7 +26,7 @@ body {
   place-items: center;
   background-color: @background;
   min-height: 95vh;
-  margin: 1rem;
+  margin: @body-size;
 }
 img {
   max-width: 100%;
@@ -48,20 +56,14 @@ img {
   .card__content {
     padding: 0 2em;
     h1 {
+      .textStyle(@poppins, 500, @title-size, @black);
       margin: 0;
-      font-family: @poppins;
-      font-weight: 500;
-      font-size: @title-size;
-      color: @black;
       letter-spacing: -1px;
       padding-right: 5%;
       margin-bottom: 0.5em;
     }
     h2 {
-      font-family: @lato;
-      font-weight: 400;
-      font-size: 1rem;
-      color: @gray;
+      .textStyle(@lato, 400, @body-size, @gray);
       line-height: 1.5;
       margin: 0 0 1.75em 0;
     }
@@ -87,16 +89,10 @@ img {
         margin: 0;
       }
       h3 {
-        font-family: @lato;
-        color: @black;
-        font-weight: 700;
-        font-size: 1rem;
+        .textStyle(@lato, 700, @body-size, @black);
       }
       h4 {
-        font-family: @lato;
-        color: @gray;
-        font-size: 0.85rem;
-        font-weight: 400;
+        .textStyle(@lato, 400, @small-text, @gray);
       }
     }
   }
